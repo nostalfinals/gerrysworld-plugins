@@ -1,0 +1,6 @@
+mobCoinDropping:
+  defaultCoinDrops: 5
+  settingsForPerMob:
+    creeper: 6
+    zombie: 3
+    skeleton: 2
