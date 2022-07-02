@@ -4,3 +4,5 @@ mobCoinDropping:
     creeper: 6
     zombie: 3
     skeleton: 2
+playerCoinDropping:
+  percent: 50
