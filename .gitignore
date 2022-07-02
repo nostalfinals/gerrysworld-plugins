@@ -7,8 +7,6 @@ build/
 ### IntelliJ IDEA ###
 .idea/*
 
-
-
 ### Eclipse ###
 .apt_generated
 .classpath
