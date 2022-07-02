@@ -1,4 +1,4 @@
 name: packethandler
-main: xyz.garslity093.gerrysworld.packethandler.Main
+main: xyz.garslity093.gerrysworld.packethandler.PacketHandlerPlugin
 version: 1.0.0
 author: Gerry's world developers

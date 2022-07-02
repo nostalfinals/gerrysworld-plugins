@@ -1,0 +1,6 @@
+plugins {
+    id 'java'
+}
+
+group 'xyz.garslity093.gerrysworld.ecoadditions'
+version '1.0-SNAPSHOT'

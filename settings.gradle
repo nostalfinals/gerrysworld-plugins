@@ -1,3 +1,4 @@
 rootProject.name = 'gerrysworld-plugins'
 include 'packethandler'
+include 'ecoadditions'
 
