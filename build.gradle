@@ -1,0 +1,17 @@
+group 'xyz.garslity093.gerrysworld'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    }
+
+    dependencies {
+        implementation("org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT")
+    }
+}

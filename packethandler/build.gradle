@@ -1,0 +1,6 @@
+plugins {
+    id 'java'
+}
+
+group 'xyz.garslity093.gerrysworld.packethandler'
+version '1.0.0'
