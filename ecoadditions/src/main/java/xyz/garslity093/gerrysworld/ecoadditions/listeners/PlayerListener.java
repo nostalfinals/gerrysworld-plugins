@@ -19,8 +19,7 @@ public final class PlayerListener implements Listener {
     @EventHandler
     public void onPlayerPickItem(EntityPickupItemEvent event) {
         /*玩家捡起货币处理*/
-        if (event.getEntity() instanceof Player) {
-            Player player = ((Player) event.getEntity());
+        if (event.getEntity() instanceof Player player) {
             ItemStack itemStack = event.getItem().getItemStack();
             ItemMeta itemMeta = itemStack.getItemMeta();
             /*判断是不是货币*/
