@@ -28,6 +28,7 @@ public final class PlayerListener implements Listener {
                 double amount = nbtCompound.getDouble("amount");
                 EcoAdditionsPlugin.getEco().depositPlayer(player, amount);
                 player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1F, 0F);
+                player.sendTitle(" ", "&e你拾取了 &f" + amount + "&e个货币。",0, 70, 0);
                 event.setCancelled(true);
                 event.getItem().remove();
             }
