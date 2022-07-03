@@ -27,6 +27,7 @@ public final class PlayerListener implements Listener {
                 /*给予货币 & 发送 subtitle*/
                 double amount = Utils.getCoinAmountFromItemStack(itemStack);
                 EcoAdditionsPlugin.getEco().depositPlayer(player, amount);
+                player.playSound(player.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1F, 0F);
                 player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.translateAlternateColorCodes('&', "&e你拾取了 " + amount + " 个货币。")));
                 event.setCancelled(true);
                 event.getItem().remove();
