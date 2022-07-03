@@ -1,5 +1,7 @@
 package xyz.garslity093.gerrysworld.ecoadditions.listeners;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -27,7 +29,7 @@ public final class PlayerListener implements Listener {
                 double amount = Utils.getCoinAmountFromItemStack(itemStack);
                 EcoAdditionsPlugin.getEco().depositPlayer(player, amount);
                 player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1F, 0F);
-                player.sendTitle(" ", ChatColor.translateAlternateColorCodes('&', "&e你拾取了 " + amount + " 个货币。"),0, 70, 0);
+                player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.translateAlternateColorCodes('&', "&e你拾取了 " + amount + " 个货币。")));
                 event.setCancelled(true);
                 event.getItem().remove();
             }
