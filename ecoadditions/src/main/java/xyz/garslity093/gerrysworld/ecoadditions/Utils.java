@@ -15,6 +15,7 @@ public final class Utils {
     private Utils() {
     }
 
+    /*从货币物品堆获取货币数量*/
     public static double getCoinAmountFromItemStack(ItemStack coinItemStack) {
         ItemMeta meta = coinItemStack.getItemMeta();
         if (meta.getLore() != null) {
