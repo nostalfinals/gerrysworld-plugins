@@ -13,7 +13,7 @@ import java.util.List;
 public final class EcoAdditionsCommand implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String label, String[] args) {
-        if (args[0].equalsIgnoreCase("giveCoinInfo")) {
+        if (args[0].equalsIgnoreCase("giveCoinTo")) {
             if (args.length >= 3) {
                 Player player = Bukkit.getPlayer(args[1]);
                 double amount = Double.parseDouble(args[2]);
