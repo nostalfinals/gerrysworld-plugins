@@ -1,8 +1,8 @@
 mobCoinDropping:
-  defaultCoinDrops: 5
+  defaultCoinDrops: 2
   settingsForPerMob:
     creeper: 6
     zombie: 3
     skeleton: 2
 playerCoinDropping:
-  percent: 50
+  saveCoinsPercent: 95
