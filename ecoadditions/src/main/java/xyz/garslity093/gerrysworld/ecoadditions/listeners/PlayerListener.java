@@ -1,7 +1,5 @@
 package xyz.garslity093.gerrysworld.ecoadditions.listeners;
 
-import de.tr7zw.nbtapi.NBTCompound;
-import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -12,6 +10,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import xyz.garslity093.gerrysworld.ecoadditions.EcoAdditionsPlugin;
+import xyz.garslity093.gerrysworld.ecoadditions.Utils;
 
 public final class PlayerListener implements Listener {
     /*玩家捡起物品监听器*/
@@ -20,14 +19,12 @@ public final class PlayerListener implements Listener {
         /*玩家捡起货币处理*/
         if (event.getEntity() instanceof Player) {
             Player player = ((Player) event.getEntity());
-            ItemStack item = event.getItem().getItemStack();
-            ItemMeta meta = item.getItemMeta();
+            ItemStack itemStack = event.getItem().getItemStack();
+            ItemMeta itemMeta = itemStack.getItemMeta();
             /*判断是不是货币*/
-            if (meta.getDisplayName().equals(ChatColor.translateAlternateColorCodes('&', "&e&l货币"))) {
-                NBTItem nbtItem = new NBTItem(event.getItem().getItemStack());
-                NBTCompound nbtCompound =  nbtItem.getCompound("value");
-                double amount = nbtCompound.getDouble("amount");
+            if (itemMeta.getDisplayName().equals(ChatColor.translateAlternateColorCodes('&', "&e&l货币"))) {
                 /*给予货币 & 发送 subtitle*/
+                double amount = Utils.getCoinAmountFromItemStack(itemStack);
                 EcoAdditionsPlugin.getEco().depositPlayer(player, amount);
                 player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1F, 0F);
                 player.sendTitle(" ", ChatColor.translateAlternateColorCodes('&', "&e你拾取了 " + amount + " 个货币。"),0, 70, 0);

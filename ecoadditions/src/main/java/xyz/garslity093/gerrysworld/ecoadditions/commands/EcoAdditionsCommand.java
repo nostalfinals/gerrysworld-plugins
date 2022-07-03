@@ -5,7 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
-import xyz.garslity093.gerrysworld.ecoadditions.EcoAdditionsPlugin;
+import xyz.garslity093.gerrysworld.ecoadditions.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public final class EcoAdditionsCommand implements TabExecutor {
             if (args.length >= 3) {
                 Player player = Bukkit.getPlayer(args[1]);
                 double amount = Double.parseDouble(args[2]);
-                player.getInventory().addItem(EcoAdditionsPlugin.getCoinItemStack(amount));
+                player.getInventory().addItem(Utils.getCoinItemStack(amount));
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e成功。"));
             }
         }
