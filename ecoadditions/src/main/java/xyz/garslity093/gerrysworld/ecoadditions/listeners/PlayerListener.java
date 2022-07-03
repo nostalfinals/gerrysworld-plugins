@@ -14,7 +14,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import xyz.garslity093.gerrysworld.ecoadditions.EcoAdditionsPlugin;
 
 public final class PlayerListener implements Listener {
-    /*实体捡起物品监听器*/
+    /*玩家捡起物品监听器*/
     @EventHandler
     public void onPlayerPickItem(EntityPickupItemEvent event) {
         /*玩家捡起货币处理*/
