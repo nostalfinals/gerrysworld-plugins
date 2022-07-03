@@ -34,6 +34,6 @@ public class EntityListener implements Listener {
     /*随机 是否掉货币*/
     public boolean randomCoinDroppingChance() {
         Random random = new Random();
-        return random.nextInt(2) == 1;
+        return random.nextInt(4) == 1;
     }
 }
