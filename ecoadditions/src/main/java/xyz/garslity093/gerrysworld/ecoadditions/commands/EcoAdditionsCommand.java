@@ -31,7 +31,7 @@ public final class EcoAdditionsCommand implements TabExecutor {
             }
         }else if (args[0].equalsIgnoreCase("reload")) {
             EcoAdditionsPlugin.getInstance().reloadConfig();
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e重载成功"));
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e重载成功。"));
         }
         return true;
     }
