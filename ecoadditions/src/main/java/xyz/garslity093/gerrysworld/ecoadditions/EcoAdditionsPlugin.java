@@ -8,12 +8,17 @@ import xyz.garslity093.gerrysworld.ecoadditions.commands.EcoAdditionsCommand;
 import xyz.garslity093.gerrysworld.ecoadditions.listeners.EntityListener;
 import xyz.garslity093.gerrysworld.ecoadditions.listeners.PlayerListener;
 
-public final class EcoAdditionsPlugin extends JavaPlugin{
+public final class EcoAdditionsPlugin extends JavaPlugin {
     private static Economy eco;
 
     /*获取插件主类实例*/
     public static JavaPlugin getInstance() {
         return JavaPlugin.getPlugin(EcoAdditionsPlugin.class);
+    }
+
+    /*Vault API 经济API实例 Getter*/
+    public static Economy getEco() {
+        return eco;
     }
 
     /*设置经济接口  - Vault API*/
@@ -26,11 +31,6 @@ public final class EcoAdditionsPlugin extends JavaPlugin{
             return;
         }
         eco = rsp.getProvider();
-    }
-
-    /*Vault API 经济API实例 Getter*/
-    public static Economy getEco() {
-        return eco;
     }
 
     /*插件启动方法*/

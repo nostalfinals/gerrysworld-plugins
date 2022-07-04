@@ -5,7 +5,7 @@ author: Gerry's world developers
 depend:
   - Vault
   - NBTAPI
-api-version: 1.19
+api-version: 1.13
 commands:
   ecoadditions:
     permission: ecoadditions.command

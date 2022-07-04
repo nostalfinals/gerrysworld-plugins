@@ -1,4 +1,4 @@
-package xyz.garslity093.gerrysworld.ecoadditions;
+package xyz.garslity093.gerrysworld.ecoadditions.utils;
 
 import de.tr7zw.nbtapi.NBTCompound;
 import de.tr7zw.nbtapi.NBTItem;
@@ -11,8 +11,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class Utils {
-    private Utils() {
+/*游戏内货币相关工具类*/
+public final class CoinUtils {
+    /*私有修饰 防止被实例化*/
+    private CoinUtils() {
     }
 
     /*从货币物品堆获取货币数量*/
@@ -29,7 +31,7 @@ public final class Utils {
         return 0;
     }
 
-    /*货币物品堆 Getter*/
+    /*生成指定金额的货币物品堆*/
     public static ItemStack getCoinItemStack(double amount) {
         ItemStack coinItemStack = new ItemStack(Material.SUNFLOWER, 1);
         ItemMeta coinItemMeta = coinItemStack.getItemMeta();

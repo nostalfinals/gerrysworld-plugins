@@ -12,7 +12,8 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import xyz.garslity093.gerrysworld.ecoadditions.EcoAdditionsPlugin;
-import xyz.garslity093.gerrysworld.ecoadditions.Utils;
+import xyz.garslity093.gerrysworld.ecoadditions.utils.CoinUtils;
+import xyz.garslity093.gerrysworld.ecoadditions.utils.ConfigUtils;
 
 public final class PlayerListener implements Listener {
     /*玩家捡起物品监听器*/
@@ -25,7 +26,7 @@ public final class PlayerListener implements Listener {
             /*判断是不是货币*/
             if (itemMeta.getDisplayName().equals(ChatColor.translateAlternateColorCodes('&', "&e&l货币"))) {
                 /*给予货币 & 发送 subtitle*/
-                double amount = Utils.getCoinAmountFromItemStack(itemStack);
+                double amount = CoinUtils.getCoinAmountFromItemStack(itemStack);
                 EcoAdditionsPlugin.getEco().depositPlayer(player, amount);
                 player.playSound(player.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1F, 0F);
                 player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.translateAlternateColorCodes('&', "&e你拾取了 " + amount + " 个货币。")));
@@ -40,10 +41,10 @@ public final class PlayerListener implements Listener {
     public void onPlayerDeath(PlayerDeathEvent event) {
         /*玩家死亡丢失货币处理*/
         Player player = event.getEntity();
-        double percent = EcoAdditionsPlugin.getInstance().getConfig().getDouble("playerCoinDropping.saveCoinsPercent")/100;
+        double percent = ConfigUtils.defaultConfig().getDouble("playerCoinDropping.saveCoinsPercent") / 100;
         double originBalance = EcoAdditionsPlugin.getEco().getBalance(player);
-        double balanceAfterLose = EcoAdditionsPlugin.getEco().getBalance(player)*percent;
-        double withdraw = Math.round(originBalance-balanceAfterLose);
+        double balanceAfterLose = EcoAdditionsPlugin.getEco().getBalance(player) * percent;
+        double withdraw = Math.round(originBalance - balanceAfterLose);
         /*判断玩家是否有货币*/
         if (withdraw > 0) {
             EcoAdditionsPlugin.getEco().withdrawPlayer(player, withdraw);

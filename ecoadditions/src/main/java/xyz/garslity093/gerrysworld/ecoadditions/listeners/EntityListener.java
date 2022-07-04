@@ -5,35 +5,24 @@ import org.bukkit.entity.Mob;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
-import xyz.garslity093.gerrysworld.ecoadditions.EcoAdditionsPlugin;
-import xyz.garslity093.gerrysworld.ecoadditions.Utils;
-
-import java.util.Random;
-import java.util.Set;
+import org.bukkit.inventory.ItemStack;
+import xyz.garslity093.gerrysworld.ecoadditions.utils.CoinUtils;
+import xyz.garslity093.gerrysworld.ecoadditions.utils.ConfigUtils;
+import xyz.garslity093.gerrysworld.ecoadditions.utils.DropChance;
+import xyz.garslity093.gerrysworld.ecoadditions.utils.MathUtils;
 
 public class EntityListener implements Listener {
-    /*实体死亡事件*/
+    /*实体死亡监听器*/
     @EventHandler
     public void onEntityDeath(EntityDeathEvent event) {
-        /*处理生物死亡掉货币*/
+        /*处理实体随机掉落货币*/
         if (event.getEntity() instanceof Mob) {
-            if (randomCoinDroppingChance()) {
-                Entity entity = event.getEntity();
-                Set<String> entityTypesInConfig = EcoAdditionsPlugin.getInstance().getConfig().getConfigurationSection("mobCoinDropping.settingsForPerMob").getKeys(false);
-                if (entityTypesInConfig.contains(entity.getType().name().toLowerCase())) {
-                    if (EcoAdditionsPlugin.getInstance().getConfig().getDouble("mobCoinDropping.settingsForPerMob." + entity.getType().name().toLowerCase()) > 0) {
-                        event.getDrops().add(Utils.getCoinItemStack(EcoAdditionsPlugin.getInstance().getConfig().getDouble("mobCoinDropping.settingsForPerMob." + entity.getType().name().toLowerCase())));
-                    }
-                } else {
-                    event.getDrops().add(Utils.getCoinItemStack(EcoAdditionsPlugin.getInstance().getConfig().getDouble("mobCoinDropping.defaultCoinDrops")));
-                }
+            Entity entity = event.getEntity();
+            DropChance dropChance = ConfigUtils.getEntityDropChance(entity.getType());
+            if (dropChance.willThisTimeDrop()) {
+                ItemStack itemStack = CoinUtils.getCoinItemStack(MathUtils.halfUpTwoDecimal(dropChance.randomDropAmount()));
+                event.getDrops().add(itemStack);
             }
         }
-    }
-
-    /*随机 是否掉货币*/
-    public boolean randomCoinDroppingChance() {
-        Random random = new Random();
-        return random.nextInt(4) == 1;
     }
 }
