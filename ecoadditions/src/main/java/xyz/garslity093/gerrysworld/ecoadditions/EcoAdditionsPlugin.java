@@ -21,7 +21,7 @@ public final class EcoAdditionsPlugin extends JavaPlugin {
         return eco;
     }
 
-    /*设置经济接口  - Vault API*/
+    /*初始化经济接口  - Vault API*/
     private void initEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
             return;
