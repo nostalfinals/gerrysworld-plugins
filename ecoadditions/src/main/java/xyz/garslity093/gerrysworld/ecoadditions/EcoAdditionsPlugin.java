@@ -45,6 +45,6 @@ public final class EcoAdditionsPlugin extends JavaPlugin {
 
         /*注册事件*/
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
-        Bukkit.getPluginManager().registerEvents(new EntityListener(), this);
+        //Bukkit.getPluginManager().registerEvents(new EntityListener(), this);
     }
 }
