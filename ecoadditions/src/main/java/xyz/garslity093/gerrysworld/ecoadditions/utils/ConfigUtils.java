@@ -1,13 +1,16 @@
 package xyz.garslity093.gerrysworld.ecoadditions.utils;
 
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.EntityType;
 import xyz.garslity093.gerrysworld.ecoadditions.EcoAdditionsPlugin;
+
+import java.io.File;
 
 /*配置文件相关工具类*/
 public final class ConfigUtils {
 
-    private final static FileConfiguration defaultConfig = EcoAdditionsPlugin.getInstance().getConfig();
+    private static FileConfiguration defaultConfig = EcoAdditionsPlugin.getInstance().getConfig();
 
     /*私有修饰 防止被实例化*/
     private ConfigUtils() {
@@ -38,5 +41,9 @@ public final class ConfigUtils {
     /*获取默认配置文件实例*/
     public static FileConfiguration defaultConfig() {
         return defaultConfig;
+    }
+
+    public static void reloadConfig() {
+        defaultConfig = YamlConfiguration.loadConfiguration(new File(EcoAdditionsPlugin.getInstance().getDataFolder(), "config.yml"));
     }
 }

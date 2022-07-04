@@ -7,6 +7,7 @@ import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import xyz.garslity093.gerrysworld.ecoadditions.EcoAdditionsPlugin;
 import xyz.garslity093.gerrysworld.ecoadditions.utils.CoinUtils;
+import xyz.garslity093.gerrysworld.ecoadditions.utils.ConfigUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public final class EcoAdditionsCommand implements TabExecutor {
                 }
             }
         }else if (args[0].equalsIgnoreCase("reload")) {
-            EcoAdditionsPlugin.getInstance().reloadConfig();
+            ConfigUtils.reloadConfig();
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e重载成功。"));
         }
         return true;
