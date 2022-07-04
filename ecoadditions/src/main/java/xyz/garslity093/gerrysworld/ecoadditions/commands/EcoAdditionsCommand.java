@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
+import xyz.garslity093.gerrysworld.ecoadditions.EcoAdditionsPlugin;
 import xyz.garslity093.gerrysworld.ecoadditions.utils.CoinUtils;
 
 import java.util.ArrayList;
@@ -28,6 +29,9 @@ public final class EcoAdditionsCommand implements TabExecutor {
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c该玩家不在线。"));
                 }
             }
+        }else if (args[0].equalsIgnoreCase("reload")) {
+            EcoAdditionsPlugin.getInstance().reloadConfig();
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e重载成功"));
         }
         return true;
     }
@@ -37,6 +41,7 @@ public final class EcoAdditionsCommand implements TabExecutor {
         List<String> list = new ArrayList<>();
         if (args.length == 1) {
             list.add("giveCoinTo");
+            list.add("reload");
         } else if (args.length == 2) {
             if (args[0].equalsIgnoreCase("giveCoinTo")) {
                 for (Player player : Bukkit.getOnlinePlayers()) {
