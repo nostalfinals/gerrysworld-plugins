@@ -1,0 +1,5 @@
+settings:
+  cycle: 20
+  extendSize: 100
+  worlds:
+    - world

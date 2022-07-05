@@ -1,0 +1,8 @@
+name: wbadditions
+main: xyz.garslity093.gerrysworld.wbadditions.WbAdditionsPlugin
+version: 1.0.0
+author: Gerry's world developers
+api-version: 1.13
+commands:
+  reload:
+    permission: wbadditions.command
