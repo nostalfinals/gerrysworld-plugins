@@ -13,6 +13,6 @@ public class WbExtendRunnable extends BukkitRunnable {
     }
 
     public WbExtendRunnable(JavaPlugin javaPlugin) {
-        runTaskTimer(javaPlugin, 0L, WbAdditionsPlugin.getWbExtendCycle()* 60L * 20L);
+        runTaskTimer(javaPlugin, 0L, 20L);
     }
 }

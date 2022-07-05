@@ -25,15 +25,16 @@ public final class WbAdditionsPlugin extends JavaPlugin{
     /*插件启动方法*/
     @Override
     public void onEnable() {
+        worlds = new ArrayList<>();
         saveDefaultConfig();
 
         /*读取配置*/
         wbExtendCycle = getConfig().getInt("settings.cycle");
         wbExtendSize = getConfig().getInt("settings.extendSize");
-        worlds = new ArrayList<>();
+
         for (String s : getConfig().getStringList("settings.worlds")) {
             if (Bukkit.getWorld(s) != null) {
-                worlds.add(Bukkit.getWorld("s"));
+                worlds.add(Bukkit.getWorld(s));
             }else {
                 getLogger().severe(s + " 不是一个有效的世界名称！");
             }
