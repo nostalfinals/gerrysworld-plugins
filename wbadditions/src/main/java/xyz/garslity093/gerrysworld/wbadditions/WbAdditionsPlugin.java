@@ -73,7 +73,7 @@ public final class WbAdditionsPlugin extends JavaPlugin{
         wbExtendSize = WbAdditionsPlugin.getInstance().getConfig().getInt("settings.extendSize");
         for (String s : WbAdditionsPlugin.getInstance().getConfig().getStringList("settings.worlds")) {
             if (Bukkit.getWorld(s) != null) {
-                worlds.add(Bukkit.getWorld("s"));
+                worlds.add(Bukkit.getWorld(s));
             }else {
                 WbAdditionsPlugin.getInstance().getLogger().severe(s + " 不是一个有效的世界名称！");
             }
