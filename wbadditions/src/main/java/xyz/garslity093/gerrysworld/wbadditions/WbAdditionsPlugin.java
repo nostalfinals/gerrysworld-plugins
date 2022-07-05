@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public final class WbAdditionsPlugin extends JavaPlugin{
@@ -29,6 +30,7 @@ public final class WbAdditionsPlugin extends JavaPlugin{
         /*读取配置*/
         wbExtendCycle = getConfig().getInt("settings.cycle");
         wbExtendSize = getConfig().getInt("settings.extendSize");
+        worlds = new ArrayList<>();
         for (String s : getConfig().getStringList("settings.worlds")) {
             if (Bukkit.getWorld(s) != null) {
                 worlds.add(Bukkit.getWorld("s"));
