@@ -3,6 +3,8 @@ package xyz.garslity093.gerrysworld.wbadditions;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,8 @@ public final class WbAdditionsPlugin extends JavaPlugin{
     private static List<World> worlds;
 
     private static double perSecExtend;
+
+    private static BukkitTask task;
 
     /*获取插件主类实例*/
     public static JavaPlugin getInstance() {
@@ -40,11 +44,8 @@ public final class WbAdditionsPlugin extends JavaPlugin{
             }
         }
 
-        /*计算每秒需要扩展的大小*/
-        perSecExtend = (double) wbExtendCycle/wbExtendSize/60;
-
-        /*开启扩展任务*/
-        new WbExtendRunnable(this);
+        /*加载*/
+        load();
     }
 
     /*一周期时间 Getter*/
@@ -68,9 +69,12 @@ public final class WbAdditionsPlugin extends JavaPlugin{
     }
 
     /*重载插件*/
-    public static void reload() {
+    public static void load() {
+        WbAdditionsPlugin.getInstance().getServer().getScheduler().cancelTasks(WbAdditionsPlugin.getInstance());
+        /*读取配置*/
         wbExtendCycle = WbAdditionsPlugin.getInstance().getConfig().getInt("settings.cycle");
         wbExtendSize = WbAdditionsPlugin.getInstance().getConfig().getInt("settings.extendSize");
+
         for (String s : WbAdditionsPlugin.getInstance().getConfig().getStringList("settings.worlds")) {
             if (Bukkit.getWorld(s) != null) {
                 worlds.add(Bukkit.getWorld(s));
@@ -78,6 +82,28 @@ public final class WbAdditionsPlugin extends JavaPlugin{
                 WbAdditionsPlugin.getInstance().getLogger().severe(s + " 不是一个有效的世界名称！");
             }
         }
-        perSecExtend = (double) wbExtendCycle/wbExtendSize/60;
+
+        /*计算每秒需要扩展的大小*/
+        setPerSecExtend((double) wbExtendSize/wbExtendCycle/60/20);
+
+        /*开启计划任务*/
+        task = new BukkitRunnable() {
+            @Override
+            public void run() {
+                if (Bukkit.getOnlinePlayers().size() > 0) {
+                    for (World world : getWorlds()) {
+                        world.getWorldBorder().setSize(world.getWorldBorder().getSize() + perSecExtend);
+                    }
+                }
+            }
+        }.runTaskTimer(WbAdditionsPlugin.getInstance(), 0L, 1L);
+    }
+
+    public static BukkitTask getTask() {
+        return task;
+    }
+
+    public static void setPerSecExtend(double d) {
+        perSecExtend = d;
     }
 }
