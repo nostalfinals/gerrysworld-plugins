@@ -99,11 +99,13 @@ public final class WbAdditionsPlugin extends JavaPlugin{
         }.runTaskTimer(WbAdditionsPlugin.getInstance(), 0L, 1L);
     }
 
+    /*Bukkit任务 Getter*/
     public static BukkitTask getTask() {
         return task;
     }
 
-    public static void setPerSecExtend(double d) {
+    /*设置每秒钟扩展量*/
+    private static void setPerSecExtend(double d) {
         perSecExtend = d;
     }
 }
