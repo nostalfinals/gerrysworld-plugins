@@ -14,7 +14,7 @@ public final class WbAdditionsPlugin extends JavaPlugin{
 
     private static List<World> worlds;
 
-    private static double perMinExtend;
+    private static double perSecExtend;
 
     /*获取插件主类实例*/
     public static JavaPlugin getInstance() {
@@ -37,8 +37,8 @@ public final class WbAdditionsPlugin extends JavaPlugin{
             }
         }
 
-        /*计算每分钟需要扩展的大小*/
-        perMinExtend = (double) wbExtendCycle/wbExtendSize;
+        /*计算每秒需要扩展的大小*/
+        perSecExtend = (double) wbExtendCycle/wbExtendSize/60;
 
         /*开启扩展任务*/
         new WbExtendRunnable(this);
@@ -55,8 +55,8 @@ public final class WbAdditionsPlugin extends JavaPlugin{
     }
 
     /*每分钟扩展量 Getter*/
-    public static double getPerMinExtend() {
-        return perMinExtend;
+    public static double getPerSecExtend() {
+        return perSecExtend;
     }
 
     /*需要处理的世界列表 Getter*/
@@ -75,6 +75,6 @@ public final class WbAdditionsPlugin extends JavaPlugin{
                 WbAdditionsPlugin.getInstance().getLogger().severe(s + " 不是一个有效的世界名称！");
             }
         }
-        perMinExtend = (double) wbExtendCycle/wbExtendSize;
+        perSecExtend = (double) wbExtendCycle/wbExtendSize/60;
     }
 }

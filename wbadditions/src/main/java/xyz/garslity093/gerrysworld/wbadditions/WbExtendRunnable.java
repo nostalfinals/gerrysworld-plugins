@@ -8,7 +8,7 @@ public class WbExtendRunnable extends BukkitRunnable {
     @Override
     public void run() {
         for (World world : WbAdditionsPlugin.getWorlds()) {
-            world.getWorldBorder().setSize(world.getWorldBorder().getSize() + WbAdditionsPlugin.getPerMinExtend());
+            world.getWorldBorder().setSize(world.getWorldBorder().getSize() + WbAdditionsPlugin.getPerSecExtend());
         }
     }
 
