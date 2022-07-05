@@ -5,7 +5,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.garslity093.gerrysworld.ecoadditions.commands.EcoAdditionsCommand;
-import xyz.garslity093.gerrysworld.ecoadditions.listeners.EntityListener;
 import xyz.garslity093.gerrysworld.ecoadditions.listeners.PlayerListener;
 
 public final class EcoAdditionsPlugin extends JavaPlugin {
@@ -45,6 +44,5 @@ public final class EcoAdditionsPlugin extends JavaPlugin {
 
         /*注册事件*/
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
-        //Bukkit.getPluginManager().registerEvents(new EntityListener(), this);
     }
 }

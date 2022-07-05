@@ -1,7 +1,2 @@
-mobCoinDropping:
-  defaultCoinDrops:
-    chance: 0.65
-    min: 1
-    max: 2
 playerCoinDropping:
   saveCoinsPercent: 95
