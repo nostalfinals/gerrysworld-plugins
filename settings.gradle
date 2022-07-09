@@ -1,6 +1,5 @@
 rootProject.name = 'gerrysworld-plugins'
 include 'ecoadditions'
 include 'wbadditions'
-include 'firstplay'
 include 'playeradditions'
 
