@@ -1,0 +1,10 @@
+name: menu
+main: xyz.garslity093.gerrysworld.menu.MenuPlugin
+version: 1.0.0
+author: Gerry's world developers
+api-version: 1.13
+commands:
+  menu:
+    permission: menu.command
+  menuplugin:
+    permission: menu.plugincommand
