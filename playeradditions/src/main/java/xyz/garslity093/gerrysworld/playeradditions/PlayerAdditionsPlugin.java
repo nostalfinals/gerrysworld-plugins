@@ -5,7 +5,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class PlayerAdditionsPlugin extends JavaPlugin {
 
     /*主类实例*/
-    public static final JavaPlugin INSTANCE = JavaPlugin.getPlugin(PlayerAdditionsPlugin.class);
+    public static JavaPlugin getInstance() {
+        return JavaPlugin.getPlugin(PlayerAdditionsPlugin.class);
+    }
 
     /*插件启动方法*/
     @Override

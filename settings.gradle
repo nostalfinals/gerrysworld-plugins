@@ -3,4 +3,5 @@ include 'ecoadditions'
 include 'wbadditions'
 include 'playeradditions'
 include 'menu'
+include 'motd'
 

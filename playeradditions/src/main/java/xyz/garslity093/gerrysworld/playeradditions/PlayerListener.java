@@ -12,11 +12,11 @@ public final class PlayerListener implements Listener {
     public void playerJoinEvent(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         if (!player.hasPlayedBefore()) {
-            CommandSender consoleSender = PlayerAdditionsPlugin.INSTANCE.getServer().getConsoleSender();
-            String unlockAllRecipeCmd = "/recipe give " + player.getName() + " *";
+            CommandSender consoleSender = PlayerAdditionsPlugin.getInstance().getServer().getConsoleSender();
+            String unlockAllRecipeCmd = "/minecraft:recipe give " + player.getName() + " *";
             String giveMoneyCmd = "/eco give " + player.getName() + " 500";
-            PlayerAdditionsPlugin.INSTANCE.getServer().dispatchCommand(consoleSender, unlockAllRecipeCmd);
-            PlayerAdditionsPlugin.INSTANCE.getServer().dispatchCommand(consoleSender, giveMoneyCmd);
+            PlayerAdditionsPlugin.getInstance().getServer().dispatchCommand(consoleSender, unlockAllRecipeCmd);
+            PlayerAdditionsPlugin.getInstance().getServer().dispatchCommand(consoleSender, giveMoneyCmd);
         }
     }
 }
