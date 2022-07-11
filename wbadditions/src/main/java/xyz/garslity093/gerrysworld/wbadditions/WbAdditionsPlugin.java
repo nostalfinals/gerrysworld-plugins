@@ -9,7 +9,7 @@ import org.bukkit.scheduler.BukkitTask;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class WbAdditionsPlugin extends JavaPlugin{
+public final class WbAdditionsPlugin extends JavaPlugin {
 
     private static int wbExtendCycle;
 
@@ -24,18 +24,6 @@ public final class WbAdditionsPlugin extends JavaPlugin{
     /*获取插件主类实例*/
     public static JavaPlugin getInstance() {
         return JavaPlugin.getPlugin(WbAdditionsPlugin.class);
-    }
-
-    /*插件启动方法*/
-    @Override
-    public void onEnable() {
-        worlds = new ArrayList<>();
-        saveDefaultConfig();
-        getServer().getPluginCommand("wbadditions").setExecutor(new Command());
-        getServer().getPluginCommand("wbadditions").setTabCompleter(new Command());
-
-        /*加载计划任务*/
-        load();
     }
 
     /*一周期时间 Getter*/
@@ -53,6 +41,11 @@ public final class WbAdditionsPlugin extends JavaPlugin{
         return perSecExtend;
     }
 
+    /*设置每秒钟扩展量*/
+    private static void setPerSecExtend(double d) {
+        perSecExtend = d;
+    }
+
     /*需要处理的世界列表 Getter*/
     public static List<World> getWorlds() {
         return worlds;
@@ -68,13 +61,13 @@ public final class WbAdditionsPlugin extends JavaPlugin{
         for (String s : WbAdditionsPlugin.getInstance().getConfig().getStringList("settings.worlds")) {
             if (Bukkit.getWorld(s) != null) {
                 worlds.add(Bukkit.getWorld(s));
-            }else {
+            } else {
                 WbAdditionsPlugin.getInstance().getLogger().severe(s + " 不是一个有效的世界名称！");
             }
         }
 
         /*计算每秒需要扩展的大小*/
-        setPerSecExtend((double) wbExtendSize/wbExtendCycle/60/20);
+        setPerSecExtend((double) wbExtendSize / wbExtendCycle / 60 / 20);
 
         /*开启计划任务*/
         task = new BukkitRunnable() {
@@ -94,8 +87,15 @@ public final class WbAdditionsPlugin extends JavaPlugin{
         return task;
     }
 
-    /*设置每秒钟扩展量*/
-    private static void setPerSecExtend(double d) {
-        perSecExtend = d;
+    /*插件启动方法*/
+    @Override
+    public void onEnable() {
+        worlds = new ArrayList<>();
+        saveDefaultConfig();
+        getServer().getPluginCommand("wbadditions").setExecutor(new Command());
+        getServer().getPluginCommand("wbadditions").setTabCompleter(new Command());
+
+        /*加载计划任务*/
+        load();
     }
 }

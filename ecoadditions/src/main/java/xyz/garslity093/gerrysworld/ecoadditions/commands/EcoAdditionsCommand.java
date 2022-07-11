@@ -5,7 +5,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
-import xyz.garslity093.gerrysworld.ecoadditions.EcoAdditionsPlugin;
 import xyz.garslity093.gerrysworld.ecoadditions.utils.CoinUtils;
 import xyz.garslity093.gerrysworld.ecoadditions.utils.ConfigUtils;
 
@@ -30,7 +29,7 @@ public final class EcoAdditionsCommand implements TabExecutor {
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c该玩家不在线。"));
                 }
             }
-        }else if (args[0].equalsIgnoreCase("reload")) {
+        } else if (args[0].equalsIgnoreCase("reload")) {
             ConfigUtils.reloadConfig();
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e重载成功。"));
         }

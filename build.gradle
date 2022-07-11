@@ -21,7 +21,7 @@ allprojects {
         compileOnly "de.tr7zw:item-nbt-api-plugin:2.10.0"
         compileOnly "me.lucko:helper:5.6.10"
 
-}
+    }
 
 }
 processResources {

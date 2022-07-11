@@ -1,6 +1,5 @@
 package xyz.garslity093.gerrysworld.wbadditions;
 
-import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 
