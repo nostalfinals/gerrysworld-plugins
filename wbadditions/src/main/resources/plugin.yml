@@ -4,5 +4,5 @@ version: 1.0.0
 author: Gerry's world developers
 api-version: 1.13
 commands:
-  reload:
+  wbadditions:
     permission: wbadditions.command

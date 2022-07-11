@@ -31,20 +31,10 @@ public final class WbAdditionsPlugin extends JavaPlugin{
     public void onEnable() {
         worlds = new ArrayList<>();
         saveDefaultConfig();
+        getServer().getPluginCommand("wbadditions").setExecutor(new Command());
+        getServer().getPluginCommand("wbadditions").setTabCompleter(new Command());
 
-        /*读取配置*/
-        wbExtendCycle = getConfig().getInt("settings.cycle");
-        wbExtendSize = getConfig().getInt("settings.extendSize");
-
-        for (String s : getConfig().getStringList("settings.worlds")) {
-            if (Bukkit.getWorld(s) != null) {
-                worlds.add(Bukkit.getWorld(s));
-            }else {
-                getLogger().severe(s + " 不是一个有效的世界名称！");
-            }
-        }
-
-        /*加载*/
+        /*加载计划任务*/
         load();
     }
 
