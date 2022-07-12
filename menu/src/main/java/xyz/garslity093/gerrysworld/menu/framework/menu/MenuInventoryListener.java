@@ -20,12 +20,17 @@ import xyz.garslity093.gerrysworld.menu.framework.utils.ButtonUtils;
 public final class MenuInventoryListener implements Listener {
     @EventHandler
     public void inventoryClickEvent(InventoryClickEvent event) {
-
         if (!(event.getWhoClicked() instanceof Player)) return;
 
         Player player = (Player) event.getWhoClicked();
 
         if (event.getClickedInventory() == null) return;
+
+        if (event.getClickedInventory().getHolder() instanceof Player) {
+            if (event.getView().getTopInventory().getHolder() instanceof MenuInventoryHolder) {
+                event.setCancelled(true);
+            }
+        }
 
         if (!(event.getClickedInventory().getHolder() instanceof MenuInventoryHolder)) return;
         if (event.getCurrentItem() == null) return;

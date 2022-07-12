@@ -1,6 +1,5 @@
 package xyz.garslity093.gerrysworld.menu;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -8,12 +7,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 import xyz.garslity093.gerrysworld.menu.framework.action.ButtonAction;
 import xyz.garslity093.gerrysworld.menu.framework.button.Button;
 import xyz.garslity093.gerrysworld.menu.framework.menu.Menu;
-import xyz.garslity093.gerrysworld.menu.framework.menu.MenuInventoryHolder;
 import xyz.garslity093.gerrysworld.menu.framework.menu.types.ChestMenu;
 
 /**
@@ -26,9 +23,9 @@ import xyz.garslity093.gerrysworld.menu.framework.menu.types.ChestMenu;
 public class Command implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String label, String[] args) {
-        /*Menu menu = new ChestMenu(">>> 测试");
+        Menu menu = new ChestMenu(">>> 测试");
         menu.setPattern("#########", "#A#B#C#D#", "#######TX");
-        menu.addButton('#',
+        /*menu.addButton('#',
                 new Button()
                         .setItemStack(new ItemStack(Material.BLACK_STAINED_GLASS_PANE, 1))
                         .addAction(
@@ -39,7 +36,7 @@ public class Command implements CommandExecutor {
                                         player.playSound(player, Sound.ENTITY_VILLAGER_NO, 0F, 1F);
                                     }
                                 }.addClickType(ClickType.LEFT)
-                        ));
+                        ));*/
         menu.addButton('A',
                 new Button()
                         .setItemStack(new ItemStack(Material.APPLE, 1))
@@ -121,9 +118,7 @@ public class Command implements CommandExecutor {
                                     }
                                 }.addClickType(ClickType.LEFT)
                         ));
-        menu.openForPlayer((Player) sender);*/
-        Player player = (Player) sender;
-        player.openInventory(Bukkit.createInventory(new MenuInventoryHolder(), InventoryType.FURNACE, "test"));
+        menu.openForPlayer((Player) sender);
         return true;
     }
 }
