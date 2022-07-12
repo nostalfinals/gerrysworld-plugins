@@ -31,8 +31,9 @@ public abstract class Menu {
         return pattern;
     }
 
-    public void setPattern(String... pattern) {
+    public Menu setPattern(String... pattern) {
         this.pattern = pattern;
+        return this;
     }
 
     public Inventory getBukkitInventory() {
@@ -43,10 +44,16 @@ public abstract class Menu {
         return bukkitInventoryType;
     }
 
-    public void addButton(char pattern, Button button) {
+    public Menu addButton(char pattern, Button button) {
         for (int i : processPattern(pattern)) {
             bukkitInventory.setItem(i, button.getItemStack());
         }
+        return this;
+    }
+
+    public Menu addButton(int location, Button button) {
+        bukkitInventory.setItem(location, button.getItemStack());
+        return this;
     }
 
     public void openForPlayer(Player player) {
@@ -64,7 +71,8 @@ public abstract class Menu {
         return size;
     }
 
-    public void setSize(int size) {
+    public Menu setSize(int size) {
         this.size = size;
+        return this;
     }
 }
