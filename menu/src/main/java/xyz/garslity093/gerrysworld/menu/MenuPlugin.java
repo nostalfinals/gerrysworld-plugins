@@ -15,7 +15,6 @@ public final class MenuPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         new MenuFramework(this);
-
         getServer().getPluginManager().registerEvents(new MenuInventoryListener(), this);
         getServer().getPluginCommand("menuplugin").setExecutor(new Command());
     }

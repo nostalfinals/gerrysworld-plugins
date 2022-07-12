@@ -5,7 +5,6 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import xyz.garslity093.gerrysworld.menu.framework.MenuFramework;
 import xyz.garslity093.gerrysworld.menu.framework.action.Action;
-import xyz.garslity093.gerrysworld.menu.framework.action.ButtonAction;
 import xyz.garslity093.gerrysworld.menu.framework.utils.ButtonUtils;
 
 import java.util.ArrayList;
@@ -19,18 +18,25 @@ import java.util.List;
  */
 
 public class Button {
-    private final List<Action> actions;
-    private ItemStack itemStack;
+    public List<Action> actions = new ArrayList<>();
+    public List<String> actionJsons = new ArrayList<>();
+    public ItemStack itemStack;
 
     public Button() {
-        actions = new ArrayList<>();
+        System.out.println("new action jsons");
         itemStack = new ItemStack(Material.AIR, 1);
     }
 
-    public Button addAction(ButtonAction action) {
+    public Button addAction(Action action) {
+        System.out.println(action);
+        System.out.println(MenuFramework.getGson().toJson(action));
         actions.add(action);
+        actionJsons.add(MenuFramework.getGson().toJson(action));
         NBTItem nbtItem = new NBTItem(itemStack);
-        nbtItem.getCompound("menu").setString("actions", MenuFramework.getGson().toJson(actions));
+        nbtItem.setString("clickActions", MenuFramework.getGson().toJson(actionJsons));
+        //System.out.println("add action: " + action);
+        //.out.println("aj " + actionJsons);
+        //System.out.println(MenuFramework.getGson().toJson(actions));
         itemStack = nbtItem.getItem();
         return this;
     }

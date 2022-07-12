@@ -1,5 +1,7 @@
 package xyz.garslity093.gerrysworld.menu.framework.action;
 
+import org.bukkit.entity.Player;
+
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu.framework
  * @className: Action
@@ -8,5 +10,5 @@ package xyz.garslity093.gerrysworld.menu.framework.action;
  */
 
 public interface Action {
-    void on();
+    void on(Player player);
 }

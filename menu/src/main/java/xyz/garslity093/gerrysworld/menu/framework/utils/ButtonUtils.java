@@ -17,16 +17,12 @@ public final class ButtonUtils {
 
     public static ItemStack convertToButtonItem(ItemStack itemStack) {
         NBTItem nbtItem = new NBTItem(itemStack);
-        NBTCompound nbtCompound = nbtItem.addCompound("menu");
-        nbtCompound.setBoolean("isMenuItem", true);
+        nbtItem.setBoolean("isMenuItem", true);
         return nbtItem.getItem();
     }
 
     public static boolean isMenuButtonItem(ItemStack itemStack) {
         NBTItem nbtItem = new NBTItem(itemStack);
-        if (nbtItem.getCompound("menu") != null) {
-            return nbtItem.getCompound("menu").getBoolean("isMenuItem");
-        }
-        return false;
+        return nbtItem.getBoolean("isMenuItem");
     }
 }
