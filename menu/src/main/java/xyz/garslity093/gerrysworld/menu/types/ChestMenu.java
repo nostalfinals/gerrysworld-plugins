@@ -2,9 +2,9 @@ package xyz.garslity093.gerrysworld.menu.types;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.inventory.InventoryType;
-import xyz.garslity093.gerrysworld.menu.Menu;
-import xyz.garslity093.gerrysworld.menu.MenuInventoryHolder;
-import xyz.garslity093.gerrysworld.menu.utils.PatternUtils;
+import xyz.garslity093.gerrysworld.menu.framework.Menu;
+import xyz.garslity093.gerrysworld.menu.framework.MenuInventoryHolder;
+import xyz.garslity093.gerrysworld.menu.framework.utils.PatternUtils;
 
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu.types
