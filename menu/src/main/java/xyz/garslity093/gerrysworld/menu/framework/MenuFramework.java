@@ -24,7 +24,7 @@ public class MenuFramework {
     private static boolean called = false;
 
     public MenuFramework(JavaPlugin plugin) {
-        this.plugin = plugin;
+        MenuFramework.plugin = plugin;
         plugin.getServer().getPluginManager().registerEvents(new MenuInventoryListener(), plugin);
     }
 
