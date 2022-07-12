@@ -1,8 +1,5 @@
 package xyz.garslity093.gerrysworld.menu.framework.utils;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu.utils
  * @className: PatternUtils

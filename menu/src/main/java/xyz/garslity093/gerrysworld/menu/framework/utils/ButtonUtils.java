@@ -1,8 +1,9 @@
 package xyz.garslity093.gerrysworld.menu.framework.utils;
 
-import de.tr7zw.nbtapi.NBTCompound;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.UUID;
 
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu.utils
@@ -24,5 +25,15 @@ public final class ButtonUtils {
     public static boolean isMenuButtonItem(ItemStack itemStack) {
         NBTItem nbtItem = new NBTItem(itemStack);
         return nbtItem.getBoolean("isMenuItem");
+    }
+
+    public static ItemStack addUuid(ItemStack itemStack, UUID uuid) {
+        NBTItem nbtItem = new NBTItem(itemStack);
+        nbtItem.setUUID("buttonUUID", uuid);
+        return nbtItem.getItem();
+    }
+
+    public static UUID getUUID(ItemStack itemStack) {
+        return new NBTItem(itemStack).getUUID("buttonUUID");
     }
 }

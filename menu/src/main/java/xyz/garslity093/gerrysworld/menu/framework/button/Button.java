@@ -7,8 +7,8 @@ import xyz.garslity093.gerrysworld.menu.framework.MenuFramework;
 import xyz.garslity093.gerrysworld.menu.framework.action.Action;
 import xyz.garslity093.gerrysworld.menu.framework.utils.ButtonUtils;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.UUID;
 
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu
@@ -18,26 +18,28 @@ import java.util.List;
  */
 
 public class Button {
-    public List<Action> actions = new ArrayList<>();
-    public List<String> actionJsons = new ArrayList<>();
-    public ItemStack itemStack;
+    private final UUID uuid;
+    private HashSet<Action> actions = new HashSet<>();
+    private ItemStack itemStack;
 
     public Button() {
-        System.out.println("new action jsons");
-        itemStack = new ItemStack(Material.AIR, 1);
+        //System.out.println("new action jsons");
+        uuid = UUID.randomUUID();
+        itemStack = new ItemStack(Material.STONE, 1);
+        NBTItem nbtItem = new NBTItem(itemStack);
+        nbtItem.setUUID("buttonUUID", uuid);
     }
 
     public Button addAction(Action action) {
-        System.out.println(action);
-        System.out.println(MenuFramework.getGson().toJson(action));
         actions.add(action);
-        actionJsons.add(MenuFramework.getGson().toJson(action));
-        NBTItem nbtItem = new NBTItem(itemStack);
-        nbtItem.setString("clickActions", MenuFramework.getGson().toJson(actionJsons));
+        //actionJsons.add(MenuFramework.getGson().toJson(action));
+        //NBTItem nbtItem = new NBTItem(itemStack);
+        //nbtItem.setString("clickActions", MenuFramework.getGson().toJson(actionJsons));
         //System.out.println("add action: " + action);
         //.out.println("aj " + actionJsons);
         //System.out.println(MenuFramework.getGson().toJson(actions));
-        itemStack = nbtItem.getItem();
+        //itemStack = nbtItem.getItem();
+        MenuFramework.getActionsMap().put(itemStack, actions);
         return this;
     }
 
@@ -46,7 +48,11 @@ public class Button {
     }
 
     public Button setItemStack(ItemStack itemStack) {
-        this.itemStack = ButtonUtils.convertToButtonItem(itemStack);
+        this.itemStack = ButtonUtils.addUuid(ButtonUtils.convertToButtonItem(itemStack), uuid);
         return this;
+    }
+
+    public UUID getUuid() {
+        return uuid;
     }
 }

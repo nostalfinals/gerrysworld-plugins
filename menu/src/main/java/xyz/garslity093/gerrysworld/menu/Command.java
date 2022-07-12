@@ -24,7 +24,7 @@ public class Command implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String label, String[] args) {
         Menu menu = new ChestMenu(">>> 测试");
-        menu.setPattern("#########", "#A#B#C#D#", "########X");
+        menu.setPattern("#########", "#A#B#C#D#", "#######TX");
         menu.addButton('#',
                 new Button()
                         .setItemStack(new ItemStack(Material.BLACK_STAINED_GLASS_PANE, 1))
@@ -48,6 +48,14 @@ public class Command implements CommandExecutor {
                                         player.playSound(player, Sound.UI_BUTTON_CLICK, 1F, 2F);
                                     }
                                 }.addClickType(ClickType.LEFT)
+                        )
+                        .addAction(
+                                new ButtonAction() {
+                                    @Override
+                                    public void on(Player player) {
+                                        player.sendMessage("111");
+                                    }
+                                }.addClickType(ClickType.RIGHT)
                         ));
         menu.addButton('B',
                 new Button()
@@ -94,6 +102,18 @@ public class Command implements CommandExecutor {
                                     public void on(Player player) {
                                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c你关闭了菜单。"));
                                         player.closeInventory();
+                                        player.playSound(player, Sound.UI_BUTTON_CLICK, 1F, 2F);
+                                    }
+                                }.addClickType(ClickType.LEFT)
+                        ));
+        menu.addButton('T',
+                new Button()
+                        .setItemStack(new ItemStack(Material.RED_STAINED_GLASS_PANE, 1))
+                        .addAction(
+                                new ButtonAction() {
+                                    @Override
+                                    public void on(Player player) {
+                                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c222。"));
                                         player.playSound(player, Sound.UI_BUTTON_CLICK, 1F, 2F);
                                     }
                                 }.addClickType(ClickType.LEFT)

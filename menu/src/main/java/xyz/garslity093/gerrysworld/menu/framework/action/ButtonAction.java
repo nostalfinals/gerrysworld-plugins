@@ -13,15 +13,14 @@ import java.util.List;
  */
 
 public abstract class ButtonAction implements Action {
-    public List<ClickType> clickTypes = new ArrayList<>();
+    private List<ClickType> clickTypes = new ArrayList<>();
 
     public List<ClickType> getClickTypes() {
         return clickTypes;
     }
 
     public ButtonAction addClickType(ClickType clickType) {
-       clickTypes.add(clickType);
+        clickTypes.add(clickType);
         return this;
     }
-
 }
