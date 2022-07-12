@@ -13,11 +13,13 @@ public class PatternUtils {
     public PatternUtils() {
     }
 
-    public static int[] process(String[] pattern, int[]... line) {
+    public static int[] process(char patternChar, String[] pattern, int[]... line) {
         int[] ints = new int[0];
         for (String s : pattern) {
             for (int i = 0; i < s.length(); i++) {
-                ints = ArrayUtils.insertElement(ints, line[List.of(pattern).indexOf(s)][i]);
+                if (s.charAt(i) == patternChar) {
+                    ints = ArrayUtils.insertElement(ints, line[List.of(pattern).indexOf(s)][i]);
+                }
             }
         }
         return ints;
