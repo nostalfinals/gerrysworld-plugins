@@ -12,8 +12,8 @@ import xyz.garslity093.gerrysworld.menu.framework.menu.MenuInventoryListener;
  */
 
 public class MenuFramework {
-    private final JavaPlugin plugin;
     private static final Gson GSON = new Gson();
+    private final JavaPlugin plugin;
 
 
     public MenuFramework(JavaPlugin plugin) {
