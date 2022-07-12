@@ -1,4 +1,4 @@
-package xyz.garslity093.gerrysworld.menu.framework;
+package xyz.garslity093.gerrysworld.menu.framework.menu;
 
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;

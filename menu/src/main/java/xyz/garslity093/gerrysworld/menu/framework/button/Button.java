@@ -1,8 +1,11 @@
-package xyz.garslity093.gerrysworld.menu.framework;
+package xyz.garslity093.gerrysworld.menu.framework.button;
 
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import xyz.garslity093.gerrysworld.menu.framework.MenuFramework;
+import xyz.garslity093.gerrysworld.menu.framework.action.Action;
+import xyz.garslity093.gerrysworld.menu.framework.action.ButtonAction;
 import xyz.garslity093.gerrysworld.menu.framework.utils.ButtonUtils;
 
 import java.util.ArrayList;

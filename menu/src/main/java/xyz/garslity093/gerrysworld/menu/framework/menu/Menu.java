@@ -1,8 +1,9 @@
-package xyz.garslity093.gerrysworld.menu.framework;
+package xyz.garslity093.gerrysworld.menu.framework.menu;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
+import xyz.garslity093.gerrysworld.menu.framework.button.Button;
 
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu

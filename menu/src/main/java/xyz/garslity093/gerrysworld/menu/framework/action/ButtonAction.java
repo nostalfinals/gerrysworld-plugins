@@ -1,6 +1,5 @@
-package xyz.garslity093.gerrysworld.menu.framework;
+package xyz.garslity093.gerrysworld.menu.framework.action;
 
-import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import java.util.List;
  * @date: 7/12/2022 5:33 PM
  */
 
-public abstract class ButtonAction implements Action{
+public abstract class ButtonAction implements Action {
     private final List<ClickType> CLICK_TYPES = new ArrayList<>();
 
     public List<ClickType> getClickType() {

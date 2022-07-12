@@ -2,7 +2,7 @@ package xyz.garslity093.gerrysworld.menu;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.garslity093.gerrysworld.menu.framework.MenuFramework;
-import xyz.garslity093.gerrysworld.menu.framework.MenuInventoryListener;
+import xyz.garslity093.gerrysworld.menu.framework.menu.MenuInventoryListener;
 
 public final class MenuPlugin extends JavaPlugin {
 

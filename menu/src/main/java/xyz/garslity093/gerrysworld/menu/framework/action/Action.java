@@ -1,4 +1,4 @@
-package xyz.garslity093.gerrysworld.menu.framework;
+package xyz.garslity093.gerrysworld.menu.framework.action;
 
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu.framework
