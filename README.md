@@ -1,5 +1,6 @@
 # gerrysworld-plugins
 
+[![CodeFactor](https://www.codefactor.io/repository/github/gerryyuu/gerrysworld-plugins/badge)](https://www.codefactor.io/repository/github/gerryyuu/gerrysworld-plugins)<br>
 Gerry's world 服务器插件开源项目。
 
 ### 内容介绍
