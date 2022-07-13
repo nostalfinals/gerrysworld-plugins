@@ -3,7 +3,11 @@ package xyz.garslity093.gerrysworld.menu.framework.menu;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
+import xyz.garslity093.gerrysworld.menu.framework.MenuFramework;
+import xyz.garslity093.gerrysworld.menu.framework.action.Action;
 import xyz.garslity093.gerrysworld.menu.framework.button.Button;
+
+import java.util.HashSet;
 
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu
@@ -16,6 +20,7 @@ public abstract class Menu {
     private final Inventory bukkitInventory;
     private final InventoryType bukkitInventoryType;
     private final String title;
+    private final HashSet<Action> ACTIONS = new HashSet<>();
     private int size;
     private String[] pattern;
 
@@ -23,7 +28,7 @@ public abstract class Menu {
         this.bukkitInventory = bukkitInventory;
         this.bukkitInventoryType = bukkitInventoryType;
         this.title = title;
-        size = bukkitInventoryType.getDefaultSize();
+        size = bukkitInventory.getSize();
     }
 
     /*获取图案*/
@@ -73,6 +78,12 @@ public abstract class Menu {
 
     public Menu setSize(int size) {
         this.size = size;
+        return this;
+    }
+
+    public Menu addAction(Action menuAction) {
+        this.ACTIONS.add(menuAction);
+        MenuFramework.getMenuActionMap().put(bukkitInventory.getHolder(), ACTIONS);
         return this;
     }
 }

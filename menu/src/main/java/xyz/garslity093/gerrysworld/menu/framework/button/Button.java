@@ -19,7 +19,7 @@ import java.util.UUID;
 
 public class Button {
     private final UUID uuid;
-    private HashSet<Action> actions = new HashSet<>();
+    private final HashSet<Action> ACTIONS = new HashSet<>();
     private ItemStack itemStack;
 
     public Button() {
@@ -31,15 +31,15 @@ public class Button {
     }
 
     public Button addAction(Action action) {
-        actions.add(action);
+        ACTIONS.add(action);
         //actionJsons.add(MenuFramework.getGson().toJson(action));
         //NBTItem nbtItem = new NBTItem(itemStack);
         //nbtItem.setString("clickActions", MenuFramework.getGson().toJson(actionJsons));
         //System.out.println("add action: " + action);
         //.out.println("aj " + actionJsons);
-        //System.out.println(MenuFramework.getGson().toJson(actions));
+        //System.out.println(MenuFramework.getGson().toJson(ACTIONS));
         //itemStack = nbtItem.getItem();
-        MenuFramework.getActionsMap().put(itemStack, actions);
+        MenuFramework.getButtonActionMap().put(itemStack, ACTIONS);
         return this;
     }
 

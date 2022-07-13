@@ -2,8 +2,7 @@ package xyz.garslity093.gerrysworld.menu.framework.action;
 
 import org.bukkit.event.inventory.ClickType;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu.action
@@ -13,9 +12,9 @@ import java.util.List;
  */
 
 public abstract class ButtonAction implements Action {
-    private List<ClickType> clickTypes = new ArrayList<>();
+    private HashSet<ClickType> clickTypes = new HashSet<>();
 
-    public List<ClickType> getClickTypes() {
+    public HashSet<ClickType> getClickTypes() {
         return clickTypes;
     }
 

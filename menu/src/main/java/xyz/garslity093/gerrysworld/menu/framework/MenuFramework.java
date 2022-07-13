@@ -1,6 +1,7 @@
 package xyz.garslity093.gerrysworld.menu.framework;
 
 import com.google.gson.Gson;
+import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.garslity093.gerrysworld.menu.framework.action.Action;
@@ -18,10 +19,9 @@ import java.util.HashSet;
 
 public class MenuFramework {
     private static final Gson GSON = new Gson();
-    private static final HashMap<ItemStack, HashSet<Action>> ACTIONS_MAP = new HashMap<>();
+    private static final HashMap<ItemStack, HashSet<Action>> BUTTON_ACTION_MAP = new HashMap<>();
+    private static final HashMap<InventoryHolder, HashSet<Action>> MENU_ACTION_MAP = new HashMap<>();
     private static JavaPlugin plugin;
-
-    private static boolean called = false;
 
     public MenuFramework(JavaPlugin plugin) {
         MenuFramework.plugin = plugin;
@@ -36,15 +36,15 @@ public class MenuFramework {
         return plugin;
     }
 
-    public static HashMap<ItemStack, HashSet<Action>> getActionsMap() {
-        return ACTIONS_MAP;
+    public static HashMap<ItemStack, HashSet<Action>> getButtonActionMap() {
+        return BUTTON_ACTION_MAP;
     }
 
-    public static boolean isCalled() {
-        return called;
+    public static HashMap<InventoryHolder, HashSet<Action>> getMenuActionMap() {
+        return MENU_ACTION_MAP;
     }
 
-    public static void setCalled(boolean called) {
-        MenuFramework.called = called;
+    public static void printStats() {
+        plugin.getLogger().info("[MenuFramework - Beta] " + MenuFramework.getMenuActionMap().size() + " buttons' action and " + MenuFramework.getMenuActionMap().size() + " menus' action loaded.");
     }
 }

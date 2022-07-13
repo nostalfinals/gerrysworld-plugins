@@ -3,6 +3,8 @@ package xyz.garslity093.gerrysworld.menu.framework.menu;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
+import java.util.UUID;
+
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu
  * @className: MenuInventoryHolder
@@ -11,6 +13,8 @@ import org.bukkit.inventory.InventoryHolder;
  */
 
 public class MenuInventoryHolder implements InventoryHolder {
+    private final UUID MENU_UUID = UUID.randomUUID();
+
     @Override
     public Inventory getInventory() {
         return null;

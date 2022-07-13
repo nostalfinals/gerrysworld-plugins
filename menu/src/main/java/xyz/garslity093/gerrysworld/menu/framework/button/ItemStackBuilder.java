@@ -1,7 +1,6 @@
 package xyz.garslity093.gerrysworld.menu.framework.button;
 
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import xyz.garslity093.gerrysworld.menu.framework.utils.SkullUtils;
