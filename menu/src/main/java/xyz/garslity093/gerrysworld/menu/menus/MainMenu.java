@@ -36,6 +36,7 @@ public class MainMenu extends LargeChestMenu {
                                 new ItemStackBuilder()
                                         .setMaterial(Material.RED_STAINED_GLASS_PANE)
                                         .setName(ColorUtils.parseColor("&c关闭"))
+                                        .addLore(ColorUtils.parseColor("&7下次再见哦！"))
                                         .addLore(" ")
                                         .addLore(ColorUtils.parseColor("&e左键点击。"))
                                         .build()
@@ -44,8 +45,8 @@ public class MainMenu extends LargeChestMenu {
                                 new ButtonAction() {
                                     @Override
                                     public void on(Player player) {
-                                        player.playSound(player, Sound.UI_BUTTON_CLICK, 1F, 2F);
                                         player.closeInventory();
+                                        player.playSound(player, Sound.UI_BUTTON_CLICK, 1F, 2F);
                                     }
                                 }.addClickType(ClickType.LEFT)
                         )
