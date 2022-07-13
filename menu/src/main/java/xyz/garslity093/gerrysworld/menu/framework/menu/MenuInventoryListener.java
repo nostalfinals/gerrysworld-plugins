@@ -58,7 +58,6 @@ public final class MenuInventoryListener implements Listener {
     @EventHandler
     public void inventoryOpenEvent(InventoryOpenEvent event) {
         if (!(event.getPlayer() instanceof Player)) return;
-        ;
 
         Player player = (Player) event.getPlayer();
 
@@ -81,7 +80,6 @@ public final class MenuInventoryListener implements Listener {
     @EventHandler
     public void inventoryCloseEvent(InventoryCloseEvent event) {
         if (!(event.getPlayer() instanceof Player)) return;
-        ;
 
         Player player = (Player) event.getPlayer();
 
