@@ -16,7 +16,6 @@ public final class MenuPlugin extends JavaPlugin {
         new MenuFramework(this);
         new MenuManager();
 
-        //getServer().getPluginCommand("menuplugin").setExecutor(new MenuCommand());
         getServer().getPluginCommand("menu").setExecutor(new MenuCommand());
         MenuFramework.printStats();
     }

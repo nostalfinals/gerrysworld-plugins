@@ -23,7 +23,6 @@ public class Button {
     private ItemStack itemStack;
 
     public Button() {
-        //System.out.println("new action jsons");
         uuid = UUID.randomUUID();
         itemStack = new ItemStack(Material.STONE, 1);
         NBTItem nbtItem = new NBTItem(itemStack);
@@ -32,13 +31,6 @@ public class Button {
 
     public Button addAction(Action action) {
         ACTIONS.add(action);
-        //actionJsons.add(MenuFramework.getGson().toJson(action));
-        //NBTItem nbtItem = new NBTItem(itemStack);
-        //nbtItem.setString("clickActions", MenuFramework.getGson().toJson(actionJsons));
-        //System.out.println("add action: " + action);
-        //.out.println("aj " + actionJsons);
-        //System.out.println(MenuFramework.getGson().toJson(ACTIONS));
-        //itemStack = nbtItem.getItem();
         MenuFramework.getButtonActionMap().put(itemStack, ACTIONS);
         return this;
     }
