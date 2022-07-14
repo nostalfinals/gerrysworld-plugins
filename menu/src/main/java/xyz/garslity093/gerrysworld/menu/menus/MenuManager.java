@@ -1,6 +1,6 @@
 package xyz.garslity093.gerrysworld.menu.menus;
 
-import xyz.garslity093.gerrysworld.menu.framework.menu.Menu;
+import framework.menu.menu.Menu;
 
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu.menus
@@ -10,13 +10,9 @@ import xyz.garslity093.gerrysworld.menu.framework.menu.Menu;
  */
 
 public class MenuManager {
-    private static Menu mainMenu;
-
-    public MenuManager() {
-        mainMenu = new MainMenu();
-    }
+    private static final Menu MAIN_MENU = new MainMenu();
 
     public static Menu getMainMenu() {
-        return mainMenu;
+        return MAIN_MENU;
     }
 }

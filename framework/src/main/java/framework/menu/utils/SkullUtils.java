@@ -1,4 +1,4 @@
-package xyz.garslity093.gerrysworld.menu.framework.utils;
+package framework.menu.utils;
 
 import de.tr7zw.nbtapi.NBTCompound;
 import de.tr7zw.nbtapi.NBTItem;

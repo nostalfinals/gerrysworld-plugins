@@ -11,19 +11,16 @@ allprojects {
         maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
         maven { url 'https://jitpack.io' }
         maven { url "https://repo.codemc.org/repository/maven-public/" }
-        maven { url "https://repo.lucko.me/" }
-        maven { url "https://raw.githubusercontent.com/GerryYuu/repository/master/" }
     }
 
     dependencies {
         compileOnly "org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT"
         compileOnly "com.github.MilkBowl:VaultAPI:1.7.1"
         compileOnly "de.tr7zw:item-nbt-api-plugin:2.10.0"
-        compileOnly "me.lucko:helper:5.6.10"
-
     }
 
 }
+
 processResources {
     filteringCharset "UTF-8"
 }

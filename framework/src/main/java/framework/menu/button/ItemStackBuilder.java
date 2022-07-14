@@ -1,9 +1,9 @@
-package xyz.garslity093.gerrysworld.menu.framework.button;
+package framework.menu.button;
 
+import framework.menu.utils.SkullUtils;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import xyz.garslity093.gerrysworld.menu.framework.utils.SkullUtils;
 
 import java.util.ArrayList;
 import java.util.List;

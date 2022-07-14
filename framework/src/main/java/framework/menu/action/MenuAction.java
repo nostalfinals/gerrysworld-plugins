@@ -1,4 +1,4 @@
-package xyz.garslity093.gerrysworld.menu.framework.action;
+package framework.menu.action;
 
 import java.util.HashSet;
 

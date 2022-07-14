@@ -4,3 +4,7 @@ plugins {
 
 group 'xyz.garslity093.gerrysworld'
 version '1.0.0'
+
+dependencies {
+    compileOnly project(":framework")
+}

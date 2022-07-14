@@ -1,5 +1,11 @@
-package xyz.garslity093.gerrysworld.menu.framework.menu;
+package framework.menu.menu;
 
+import framework.menu.MenuFramework;
+import framework.menu.action.Action;
+import framework.menu.action.ButtonAction;
+import framework.menu.action.MenuAction;
+import framework.menu.action.MenuActionType;
+import framework.menu.utils.ButtonUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,12 +14,6 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
-import xyz.garslity093.gerrysworld.menu.framework.MenuFramework;
-import xyz.garslity093.gerrysworld.menu.framework.action.Action;
-import xyz.garslity093.gerrysworld.menu.framework.action.ButtonAction;
-import xyz.garslity093.gerrysworld.menu.framework.action.MenuAction;
-import xyz.garslity093.gerrysworld.menu.framework.action.MenuActionType;
-import xyz.garslity093.gerrysworld.menu.framework.utils.ButtonUtils;
 
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu

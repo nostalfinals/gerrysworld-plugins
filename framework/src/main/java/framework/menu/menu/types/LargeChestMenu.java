@@ -1,10 +1,10 @@
-package xyz.garslity093.gerrysworld.menu.framework.menu.types;
+package framework.menu.menu.types;
 
+import framework.menu.menu.Menu;
+import framework.menu.menu.MenuInventoryHolder;
+import framework.menu.utils.PatternUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.event.inventory.InventoryType;
-import xyz.garslity093.gerrysworld.menu.framework.menu.Menu;
-import xyz.garslity093.gerrysworld.menu.framework.menu.MenuInventoryHolder;
-import xyz.garslity093.gerrysworld.menu.framework.utils.PatternUtils;
 
 /**
  * @packageName: xyz.garslity093.gerrysworld.menu.framework.menu.types

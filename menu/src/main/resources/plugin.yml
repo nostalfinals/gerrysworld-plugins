@@ -4,7 +4,7 @@ version: 1.0.0
 author: Gerry's world developers
 api-version: 1.13
 depend:
-  - NBTAPI
+  - framework
 commands:
   menu:
     permission: menu.command

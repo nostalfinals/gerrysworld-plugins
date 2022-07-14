@@ -1,4 +1,4 @@
-package xyz.garslity093.gerrysworld.menu.framework.utils;
+package framework.menu.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

@@ -4,4 +4,5 @@ include 'wbadditions'
 include 'playeradditions'
 include 'menu'
 include 'motd'
+include 'framework'
 
