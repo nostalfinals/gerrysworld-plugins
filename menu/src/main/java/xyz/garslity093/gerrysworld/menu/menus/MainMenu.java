@@ -1,15 +1,15 @@
 package xyz.garslity093.gerrysworld.menu.menus;
 
+import framework.menu.action.ButtonAction;
+import framework.menu.action.MenuAction;
+import framework.menu.action.MenuActionType;
+import framework.menu.button.Button;
+import framework.menu.button.ItemStackBuilder;
+import framework.menu.menu.types.LargeChestMenu;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
-import xyz.garslity093.gerrysworld.menu.framework.action.ButtonAction;
-import xyz.garslity093.gerrysworld.menu.framework.action.MenuAction;
-import xyz.garslity093.gerrysworld.menu.framework.action.MenuActionType;
-import xyz.garslity093.gerrysworld.menu.framework.button.Button;
-import xyz.garslity093.gerrysworld.menu.framework.button.ItemStackBuilder;
-import xyz.garslity093.gerrysworld.menu.framework.menu.types.LargeChestMenu;
 import xyz.garslity093.gerrysworld.menu.utils.ColorUtils;
 
 /**

@@ -1,11 +1,11 @@
-package xyz.garslity093.gerrysworld.menu.framework.button;
+package framework.menu.button;
 
 import de.tr7zw.nbtapi.NBTItem;
+import framework.menu.MenuFramework;
+import framework.menu.action.Action;
+import framework.menu.utils.ButtonUtils;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-import xyz.garslity093.gerrysworld.menu.framework.MenuFramework;
-import xyz.garslity093.gerrysworld.menu.framework.action.Action;
-import xyz.garslity093.gerrysworld.menu.framework.utils.ButtonUtils;
 
 import java.util.HashSet;
 import java.util.UUID;

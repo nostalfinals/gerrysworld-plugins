@@ -3,3 +3,5 @@ main: xyz.garslity093.gerrysworld.motd.MotdPlugin
 version: 1.0.0
 author: Gerry's world developers
 api-version: 1.13
+depend:
+  - framework
