@@ -11,6 +11,7 @@ Gerry's world 服务器插件开源项目。
 - `playeradditions` - 玩家首次进入事件等。
 - `menu` - 服务器菜单
 - `motd` - 修改服务器标语。
+- `wgadditions` - 对 WorldGuard 插件的附加内容。
 
 ### 贡献
 
